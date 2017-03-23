@@ -20,7 +20,6 @@ class SearchBar extends Component {
     event.preventDefault();  
     //get API weather data
     this.props.fetchWeather(this.state.term);
-    if (cityData.city.name) 
     this.setState(
       { term: ''}
     );

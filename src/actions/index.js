@@ -10,9 +10,10 @@ export function fetchWeather(city) {
   const request = axios.get(url);
   console.log(request);
   
-
   return {
     type: FETCH_WEATHER,
-    payload: request
+    payload: request //payload is a promise so Redux Promis stops the action 
+    //and once request finishes Redux Promise dispatches a new action of the same 
+    //type but with a payload of the resolved request (unwraps the promise) and sends it to the reducer.
   };
 }
